@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Furniture Shop</title>
+  </head>
+  <style>
+    /* Buy Now Button */
+.buy-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buy-btn:hover {
+  background: #5b5858;
+}
+  </style>
+  <body>
+<nav>
+  <div class="nav__header">
+<div class="nav__logo">
+  <a href="index.html">
+    <img src="assets/stackly_logo.webp" alt="stackly_logo" class="logo-img" />
+  </a>
+</div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+
+    <!-- HOME DROPDOWN -->
+<li class="dropdown">
+  <a href="index.html" class="home-link">Home</a>   <!-- Works normally -->
+
+  <i class="ri-arrow-down-s-line arrow"></i>   <!-- Opens dropdown -->
+
+  <ul class="dropdown-menu">
+    <li><a href="./homepage_2/index2.html">Home Page 2</a></li>
+  </ul>
+</li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<!--HEADER SECTION-->
+    <header class="section__container header__container" id="home">
+      <div class="header__image">
+        <img src="assets/header.webp" alt="header" />
+      </div>
+      <div class="header__content">
+        <div>
+          <h1>Modern Interior Makeover</h1>
+          <p>
+            Let our expert designers transform your space with elegant and luxurious interior design.
+          </p>
+        </div>
+      </div>
+    </header>
+
+<!--ABOUT SECTION-->
+<section class="section__container about__container" id="about">
+  <div class="about__header" data-aos="fade-up" data-aos-duration="800">
+    <div>
+      <h2 class="section__header">About us</h2>
+      <p class="section__description">
+        Our passion for exceptional craftsmanship drives us to curate the
+        best pieces for every room in your house.
+      </p>
+    </div>
+  </div>
+
+  <div class="about__content">
+    <div class="about__image" data-aos="fade-right" data-aos-duration="900">
+      <img src="assets/about.webp" alt="about" />
+    </div>
+
+    <div class="about__grid">
+      <div class="about__card" data-aos="fade-up" data-aos-duration="700">
+        <h3>1.</h3>
+        <h4>Who we are</h4>
+        <p>
+          You get a 2-week free trail to kick the Smaert tries. We want you
+          to.
+        </p>
+      </div>
+
+      <div class="about__card" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
+        <h3>2.</h3>
+        <h4>What do we do</h4>
+        <p>
+          We give you a free course that guides you through the process.
+        </p>
+      </div>
+
+      <div class="about__card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+        <h3>3.</h3>
+        <h4>How do we help</h4>
+        <p>Use our multimedis lectures, videos, and coaching sessions.</p>
+      </div>
+
+      <div class="about__card" data-aos="fade-up" data-aos-delay="450" data-aos-duration="700">
+        <h3>4.</h3>
+        <h4>Create success story</h4>
+        <p>
+          With access to online learning resources anyone can transform.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--DEAL-CARD SECTION-->
+    <section class="section__container deals__container">
+      <div class="deals__card">
+        <h2 class="section__header">Hottest deals for you</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, neque.</p>
+      </div>
+      <div class="deals__card">
+        <span><i class="ri-cash-line"></i></span>
+        <h4>1.5% cashback</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque saepe laboriosam.</p>
+      </div>
+      <div class="deals__card">
+        <span><i class="ri-calendar-schedule-line"></i></span>
+        <h4>30 day terms</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam nobis voluptatibus!
+        </p>
+      </div>
+      <div class="deals__card">
+        <span><i class="ri-money-rupee-circle-line"></i></span>
+        <h4>Save money</h4>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis cum commodi doloremque!
+        </p>
+      </div>
+    </section>
+
+    <!--PRODUCTS SECTION-->
+        <section class="section__container product__container" id="product">
+      <h2 class="section__header">Our Products</h2>
+      <div class="product__grid">
+        <div class="product__card">
+          <h4>Stackable Chair</h4>
+          <p>$87.00</p>
+          <img src="assets/product- (1).png" alt="product" />
+            <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+        </div>
+        <div class="product__card">
+          <h4>Lamp Tool</h4>
+          <p>$35.00</p>
+          <img src="assets/product- (2).png" alt="product" />
+            <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+        </div>
+        <div class="product__card">
+          <h4>Dining Chair</h4>
+          <p>$55.00</p>
+          <img src="assets/product- (3).png" alt="product" />
+            <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+        </div>
+        <div class="product__card">
+          <h4>Hand Base Lamp</h4>
+          <p>$35.00</p>
+          <img src="assets/product- (4).png" alt="product" />
+            <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+        </div>
+        <div class="product__card">
+          <h4>Stylish Chair</h4>
+          <p>$45.00</p>
+          <img src="assets/product- (5).png" alt="product" />
+            <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+        </div>
+        <div class="product__card">
+          <h4>Vintage Chair</h4>
+          <p>$65.00</p>
+          <img src="assets/product- (6).png" alt="product" />
+                       <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+        </div>
+      </div>
+      <div class="see-more-wrapper">
+  <a href="products.html" class="see-more-btn">See More</a>
+</div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+<section class="contact section__container" id="contact">
+  <h2 class="section__header">Contact Us</h2>
+  <p class="contact__subtext">
+    Get in touch with us for any queries, support, or business-related questions.
+  </p>
+
+  <div class="contact__wrapper">
+
+    <!-- LEFT SIDE DETAILS -->
+    <div class="contact__details">
+
+      <h3>Get in Touch</h3>
+
+      <p><i class="ri-map-pin-line"></i> 3210 Street, Chennai, Tamil Nadu</p>
+      <p><i class="ri-phone-line"></i> +91 9876543210</p>
+      <p><i class="ri-phone-line"></i> +91 9047366578</p>
+      <p><i class="ri-mail-line"></i> info@thestackly.com</p>
+      <p><i class="ri-time-line"></i> Mon – Sat: 9:30 AM – 7:00 PM</p>
+
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <form class="contact__form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="text" placeholder="Subject" required />
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+
+     <!--FOOTER SECTION-->
+       <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+  <h4>Contact</h4>
+
+  <p>3210 Street, Chennai,<br>Tamilnadu</p>
+
+  <ul class="footer__links">
+    <li><a href="tel:+919876543210">+91 9876543210</a></li>
+    <li><a href="tel:+919047366578">+91 9047366578</a></li>
+    <li><a href="mailto:info@thestackly.com">info@thestackly.com</a></li>
+  </ul>
+  <br>
+
+          <ul class="footer__socials">
+            <li>
+              <a href="404.html"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-linkedin-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-pinterest-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="404.html">Pricing</a></li>
+            <li><a href="404.html">FAQs</a></li>
+            <li><a href="404.html">Contact Support</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms</a></li>
+          </ul>
+        </div>
+<div class="footer__col">
+  <h4>Our Location</h4>
+
+  <div class="footer__map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31096.785919895504!2d80.220966!3d13.082680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265dfb4b3d8e1%3A0x2c6a5c8384d7a93b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000"
+      width="100%"
+      height="200"
+      style="border:0; border-radius: 10px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Interior Design Mastery. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+  </body>
+</html>

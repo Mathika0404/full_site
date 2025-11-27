@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glowing - Reveal The Beauty of Skin</title>
+      <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./index2.css.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/logo.png">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-3.jpg">
+
+</head>
+<style>
+  nav {
+  position: relative;
+  z-index: 9999;
+  background: white;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 99999;
+  display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.hero,
+.hero-img,
+.hero-banner,
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  margin-top: 80px;
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__socials a {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.footer__socials a:hover {
+  opacity: 0.5;
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: var(--extra-light);
+  opacity: 0.8;
+  text-align: center;
+}
+
+</style>
+
+<body id="top">
+<nav>
+  <div class="nav__header">
+<div class="nav__logo">
+  <a href="./index2.html">
+    <img src="../assets/stackly_logo.webp" alt="stackly_logo" class="logo-img" />
+  </a>
+</div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+
+    <!-- HOME DROPDOWN -->
+<li class="dropdown">
+  <a href="index2.html" class="home-link">Home</a>   <!-- Works normally -->
+
+  <i class="ri-arrow-down-s-line arrow"></i>   <!-- Opens dropdown -->
+
+  <ul class="dropdown-menu">
+    <li><a href="../index.html">Home Page 1</a></li>
+  </ul>
+</li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="offer.html">Offer</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="login.html">Login</a></li>
+
+  </ul>
+</nav>
+
+  <!-- 
+    - #MOBILE NAVBAR
+  -->
+
+  <div class="sidebar">
+    <div class="mobile-navbar" data-navbar>
+
+      <div class="wrapper">
+        <a href="#" class="logo">
+          <img src="./images/logo.png" width="179" height="26" alt="Glowing">
+        </a>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+      <ul class="navbar-list">
+
+        <li>
+          <a href="#home" class="navbar-link" data-nav-link>Home</a>
+        </li>
+
+        <li>
+          <a href="#collection" class="navbar-link" data-nav-link>Collection</a>
+        </li>
+
+        <li>
+          <a href="#shop" class="navbar-link" data-nav-link>Shop</a>
+        </li>
+
+        <li>
+          <a href="#offer" class="navbar-link" data-nav-link>Offer</a>
+        </li>
+
+        <li>
+          <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+  </div>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="hero" data-section>
+        <div class="container">
+
+          <ul class="has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="hero-card has-bg-image" style="background-image: url('./images/banner-1.jpg')">
+
+                <div class="card-content">
+
+                  <h1 class="h1 hero-title">
+                    Reveal The <br>
+                    Beauty of Skin
+                  </h1>
+
+                  <p class="hero-text">
+                    Made using clean, non-toxic ingredients, our products are designed for everyone.
+                  </p>
+
+                  <p class="price">Starting at $7.99</p>
+
+                  <a href="./404.html" class="btn btn-primary">Shop Now</a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="hero-card has-bg-image" style="background-image: url('./images/banner-2.jpg')">
+
+                <div class="card-content">
+
+                  <h1 class="h1 hero-title">
+                    Reveal The <br>
+                    Beauty of Skin
+                  </h1>
+
+                  <p class="hero-text">
+                    Made using clean, non-toxic ingredients, our products are designed for everyone.
+                  </p>
+
+                  <p class="price">Starting at $7.99</p>
+
+                  <a href="./404.html" class="btn btn-primary">Shop Now</a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="hero-card has-bg-image" style="background-image: url('./images/hero-banner-3.jpg')">
+
+                <div class="card-content">
+
+                  <h1 class="h1 hero-title">
+                    Reveal The <br>
+                    Beauty of Skin
+                  </h1>
+
+                  <p class="hero-text">
+                    Made using clean, non-toxic ingredients, our products are designed for everyone.
+                  </p>
+
+                  <p class="price">Starting at $7.99</p>
+
+                  <a href="./404.html" class="btn btn-primary">Shop Now</a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #OFFER
+      -->
+
+      <section class="section offer" id="offer" aria-label="offer" data-section>
+        <div class="container">
+
+          <figure class="offer-banner">
+            <img src="./images/offer-banner-1.jpg" width="305" height="408" loading="lazy" alt="offer products"
+              class="w-100">
+
+            <img src="./images/offer-banner-2.jpg" width="450" height="625" loading="lazy" alt="offer products"
+              class="w-100">
+          </figure>
+
+          <div class="offer-content">
+
+            <p class="offer-subtitle">
+              <span class="span">Special Offer</span>
+
+              <span class="badge" aria-label="20% off">-20%</span>
+            </p>
+
+            <h2 class="h2-large section-title">Mountain Pine Bath Oil</h2>
+
+            <p class="section-text">
+              Made using clean, non-toxic ingredients, our products are designed for everyone.
+            </p>
+
+            <div class="countdown">
+
+              <span class="time" aria-label="days">15</span>
+              <span class="time" aria-label="hours">21</span>
+              <span class="time" aria-label="minutes">46</span>
+              <span class="time" aria-label="seconds">08</span>
+
+            </div>
+
+            <a href="./404.html" class="btn btn-primary">Get Only $39.00</a>
+
+          </div>
+
+        </div>
+      </section>
+
+            <!-- 
+        - #OFFER
+      -->
+
+      <section class="section offer" id="offer" aria-label="offer" data-section>
+        <div class="container">
+
+          <figure class="offer-banner">
+            <img src="./images/offer-banner-1.jpg" width="305" height="408" loading="lazy" alt="offer products"
+              class="w-100">
+
+            <img src="./images/offer-banner-2.jpg" width="450" height="625" loading="lazy" alt="offer products"
+              class="w-100">
+          </figure>
+
+          <div class="offer-content">
+
+            <p class="offer-subtitle">
+              <span class="span">Special Offer</span>
+
+              <span class="badge" aria-label="20% off">-20%</span>
+            </p>
+
+            <h2 class="h2-large section-title">Mountain Pine Bath Oil</h2>
+
+            <p class="section-text">
+              Made using clean, non-toxic ingredients, our products are designed for everyone.
+            </p>
+
+            <div class="countdown">
+
+              <span class="time" aria-label="days">5</span>
+              <span class="time" aria-label="hours">13</span>
+              <span class="time" aria-label="minutes">58</span>
+              <span class="time" aria-label="seconds">09</span>
+
+            </div>
+
+            <a href="./404.html" class="btn btn-primary">Get Only $39.00</a>
+
+          </div>
+
+        </div>
+      </section>
+
+            <!-- 
+        - #OFFER
+      -->
+
+      <section class="section offer" id="offer" aria-label="offer" data-section>
+        <div class="container">
+
+          <figure class="offer-banner">
+            <img src="./images/offer-banner-2.jpg" width="305" height="408" loading="lazy" alt="offer products"
+              class="w-100">
+
+            <img src="./images/offer-banner-1.jpg" width="450" height="625" loading="lazy" alt="offer products"
+              class="w-100">
+          </figure>
+
+          <div class="offer-content">
+
+            <p class="offer-subtitle">
+              <span class="span">Special Offer</span>
+
+              <span class="badge" aria-label="20% off">-20%</span>
+            </p>
+
+            <h2 class="h2-large section-title">Mountain Pine Bath Oil</h2>
+
+            <p class="section-text">
+              Made using clean, non-toxic ingredients, our products are designed for everyone.
+            </p>
+
+            <div class="countdown">
+
+              <span class="time" aria-label="days">3</span>
+              <span class="time" aria-label="hours">5</span>
+              <span class="time" aria-label="minutes">25</span>
+              <span class="time" aria-label="seconds">04</span>
+
+            </div>
+
+            <a href="./404.html" class="btn btn-primary">Get Only $39.00</a>
+
+          </div>
+
+        </div>
+      </section>
+
+            <section class="section offer" id="offer" aria-label="offer" data-section>
+        <div class="container">
+
+          <figure class="offer-banner">
+            <img src="./images/offer-banner-2.jpg" width="305" height="408" loading="lazy" alt="offer products"
+              class="w-100">
+
+            <img src="./images/offer-banner-1.jpg" width="450" height="625" loading="lazy" alt="offer products"
+              class="w-100">
+          </figure>
+
+          <div class="offer-content">
+
+            <p class="offer-subtitle">
+              <span class="span">Special Offer</span>
+
+              <span class="badge" aria-label="20% off">-20%</span>
+            </p>
+
+            <h2 class="h2-large section-title">Mountain Pine Bath Oil</h2>
+
+            <p class="section-text">
+              Made using clean, non-toxic ingredients, our products are designed for everyone.
+            </p>
+
+            <div class="countdown">
+
+              <span class="time" aria-label="days">3</span>
+              <span class="time" aria-label="hours">8</span>
+              <span class="time" aria-label="minutes">30</span>
+              <span class="time" aria-label="seconds">20</span>
+
+            </div>
+
+            <a href="./404.html" class="btn btn-primary">Get Only $39.00</a>
+
+          </div>
+
+        </div>
+      </section>
+
+            <section class="section offer" id="offer" aria-label="offer" data-section>
+        <div class="container">
+
+          <figure class="offer-banner">
+            <img src="./images/offer-banner-2.jpg" width="305" height="408" loading="lazy" alt="offer products"
+              class="w-100">
+
+            <img src="./images/offer-banner-1.jpg" width="450" height="625" loading="lazy" alt="offer products"
+              class="w-100">
+          </figure>
+
+          <div class="offer-content">
+
+            <p class="offer-subtitle">
+              <span class="span">Special Offer</span>
+
+              <span class="badge" aria-label="20% off">-20%</span>
+            </p>
+
+            <h2 class="h2-large section-title">Mountain Pine Bath Oil</h2>
+
+            <p class="section-text">
+              Made using clean, non-toxic ingredients, our products are designed for everyone.
+            </p>
+
+            <div class="countdown">
+
+              <span class="time" aria-label="days">2</span>
+              <span class="time" aria-label="hours">10</span>
+              <span class="time" aria-label="minutes">45</span>
+              <span class="time" aria-label="seconds">00</span>
+
+            </div>
+
+            <a href="./404.html" class="btn btn-primary">Get Only $39.00</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+    </article>
+  </main>
+
+
+
+
+
+    <!--FOOTER SECTION-->
+       <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+  <h4>Contact</h4>
+  <p>3210 Street, Chennai,<br>Tamilnadu</p>
+
+  <ul class="footer__links">
+    <li><a href="tel:+919876543210">+91 9876543210</a></li>
+    <li><a href="tel:+919047366578">+91 9047366578</a></li>
+    <li><a href="mailto:info@thestackly.com">info@thestackly.com</a></li>
+  </ul>
+<br>
+          <ul class="footer__socials">
+            <li>
+              <a href="404.html"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-linkedin-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-pinterest-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="./index2.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="offer.html">Offer</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="404.html">Pricing</a></li>
+            <li><a href="404.html">FAQs</a></li>
+            <li><a href="404.html">Contact Support</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms</a></li>
+          </ul>
+        </div>
+<div class="footer__col">
+  <h4>Our Location</h4>
+
+  <div class="footer__map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31096.785919895504!2d80.220966!3d13.082680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265dfb4b3d8e1%3A0x2c6a5c8384d7a93b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000"
+      width="100%"
+      height="200"
+      style="border:0; border-radius: 10px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Interior Design Mastery. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./main.js" defer></script>
+<script src="./index2.js.js" defer></script>
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Furniture Shop</title>
+  </head>
+
+  <style>
+    /* Field Error Text */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: none;
+}
+
+/* Red input border */
+input.error-border {
+  border: 1px solid red;
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+  .error {
+    font-size: 11px;
+  }
+}
+
+  </style>
+    <body>
+<nav>
+  <div class="nav__header">
+<div class="nav__logo">
+  <a href="index.html">
+    <img src="assets/stackly_logo.webp" alt="stackly_logo" class="logo-img" />
+  </a>
+</div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+
+    <!-- HOME DROPDOWN -->
+<li class="dropdown">
+  <a href="index2.html" class="home-link">Home</a>   <!-- Works normally -->
+
+  <i class="ri-arrow-down-s-line arrow"></i>   <!-- Opens dropdown -->
+
+  <ul class="dropdown-menu">
+    <li><a href="../index.html">Home Page 1</a></li>
+  </ul>
+</li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="offer.html">Offer</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<!-- LOGIN AND SIGNUP PAGE -->
+<div class="container" id="container">
+
+  <!-- SIGN UP -->
+  <div class="form-container sign-up">
+    <form>
+      <h1>Create Account</h1>
+      <div class="social-icons">
+        <a href="404.html" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+        <a href="404.html" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html" class="icon"><i class="fa-brands fa-github"></i></a>
+        <a href="404.html" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your email for registration</span>
+<input type="text" id="signup-name" placeholder="Name">
+<small class="error"></small>
+
+<input type="email" id="signup-email" placeholder="Email">
+<small class="error"></small>
+
+<input type="password" id="signup-password" placeholder="Password">
+<small class="error"></small>
+
+<button>Sign Up</button>
+
+
+      <!-- ✅ MOBILE SWITCH -->
+      <p class="mobile-link">
+        Already have an account?
+        <span onclick="container.classList.remove('active')">Sign In</span>
+      </p>
+
+    </form>
+  </div>
+
+
+  <!-- SIGN IN -->
+  <div class="form-container sign-in">
+    <form>
+      <h1>Sign In</h1>
+      <div class="social-icons">
+        <a href="404.html" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+        <a href="404.html" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html" class="icon"><i class="fa-brands fa-github"></i></a>
+        <a href="404.html" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your email password</span>
+      <input type="email" id="signin-email" placeholder="Email">
+<small class="error"></small>
+      <input type="password" id="signin-password" placeholder="Password">
+<small class="error"></small>
+      <a href="404.html">Forget Your Password?</a>
+      <button>Sign In</button>
+
+      <!-- ✅ MOBILE SWITCH -->
+      <p class="mobile-link">
+        Don’t have an account?
+        <span onclick="container.classList.add('active')">Sign Up</span>
+      </p>
+
+    </form>
+  </div>
+
+  <!-- DESKTOP TOGGLE PANEL -->
+  <div class="toggle-container">
+    <div class="toggle">
+
+      <div class="toggle-panel toggle-left">
+        <h1>Welcome Back!</h1>
+        <p>Enter your personal details to use all of site features</p>
+        <button class="hidden" id="login">Sign In</button>
+      </div>
+
+      <div class="toggle-panel toggle-right">
+        <h1>Hello, Friend!</h1>
+        <p>Register with your personal details to use all of site features</p>
+        <button class="hidden" id="register">Sign Up</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="login.js"></script>
+
+<script>
+// ✅ SIGN IN VALIDATION
+document.querySelector(".sign-in form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let valid = true;
+
+  const email = document.getElementById("signin-email");
+  const password = document.getElementById("signin-password");
+
+  clearErrors(this);
+
+  if (email.value.trim() === "") {
+    showError(email, "Email is required");
+    valid = false;
+  }
+
+  if (password.value.trim() === "") {
+    showError(password, "Password is required");
+    valid = false;
+  }
+
+  if (valid) {
+    alert("This Page is 404");
+  }
+});
+
+
+// ✅ SIGN UP VALIDATION
+document.querySelector(".sign-up form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let valid = true;
+
+  const name = document.getElementById("signup-name");
+  const email = document.getElementById("signup-email");
+  const password = document.getElementById("signup-password");
+
+  clearErrors(this);
+
+  if (name.value.trim() === "") {
+    showError(name, "Name is required");
+    valid = false;
+  }
+
+  if (email.value.trim() === "") {
+    showError(email, "Email is required");
+    valid = false;
+  }
+
+  if (password.value.trim() === "") {
+    showError(password, "Password is required");
+    valid = false;
+  }
+
+  if (valid) {
+    alert("This Page is 404");
+  }
+});
+
+
+// ✅ SHOW ERROR MESSAGE FUNCTION
+function showError(input, message) {
+  const error = input.nextElementSibling;
+  error.style.display = "block";
+  error.innerText = message;
+  input.classList.add("error-border");
+}
+
+
+// ✅ CLEAR ERRORS FUNCTION
+function clearErrors(form) {
+  form.querySelectorAll(".error").forEach(err => {
+    err.style.display = "none";
+    err.innerText = "";
+  });
+
+  form.querySelectorAll("input").forEach(input => {
+    input.classList.remove("error-border");
+  });
+}
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <title>product-page</title>
+  </head>
+  <style>
+    /* Top-right icon */
+.product__icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  padding: 6px 8px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  color: var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+/* Buy Now Button */
+.buy-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buy-btn:hover {
+  background: #5b5858;
+}
+
+/* Ensure card has space for button */
+.product__card {
+  padding-bottom: 3.5rem;
+  border-radius: 10px;
+}
+
+ h2{
+    text-align: center;
+}
+
+.product__container p {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #product {
+    padding-top: 120px;
+  }
+}
+
+  </style>
+  <body>
+<nav>
+  <div class="nav__header">
+<div class="nav__logo">
+  <a href="index.html">
+    <img src="assets/stackly_logo.webp" alt="stackly_logo" class="logo-img" />
+  </a>
+</div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+
+    <!-- HOME DROPDOWN -->
+<li class="dropdown">
+  <a href="index.html" class="home-link">Home</a>   <!-- Works normally -->
+
+  <i class="ri-arrow-down-s-line arrow"></i>   <!-- Opens dropdown -->
+
+  <ul class="dropdown-menu">
+    <li><a href="./homepage_2/index2.html">Home Page 2</a></li>
+  </ul>
+</li>
+
+
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="login.html">Login</a></li>
+
+  </ul>
+</nav>
+
+   <!--PRODUCTS SECTION-->
+<section class="section__container product__container" id="product">
+  <h2 class="section__header" data-aos="fade-up">Our Products</h2>
+  <p>Explore our premium collection of furniture crafted for elegance & comfort.</p>
+
+  <div class="product__grid">
+    
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-name="stackable chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Stackable Chair</h4>
+      <p>$87.00</p>
+      <img src="assets/product- (1).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100" data-name="lamp tool">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Lamp Tool</h4>
+      <p>$35.00</p>
+      <img src="assets/product- (2).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200" data-name="dining chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Dining Chair</h4>
+      <p>$55.00</p>
+      <img src="assets/product- (3).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="300" data-name="hand base lamp">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Hand Base Lamp</h4>
+      <p>$35.00</p>
+      <img src="assets/product- (4).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="400" data-name="stylish chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Stylish Chair</h4>
+      <p>$45.00</p>
+      <img src="assets/product- (5).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="500" data-name="vintage chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Vintage Chair</h4>
+      <p>$65.00</p>
+      <img src="assets/product- (6).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+        <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="300" data-name="hand base lamp">
+                    <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Hand Base Lamp</h4>
+      <p>$35.00</p>
+      <img src="assets/product- (4).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="400" data-name="stylish chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Stylish Chair</h4>
+      <p>$45.00</p>
+      <img src="assets/product- (5).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="500" data-name="vintage chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Vintage Chair</h4>
+      <p>$65.00</p>
+      <img src="assets/product- (6).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+        <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="300" data-name="hand base lamp">
+                    <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Hand Base Lamp</h4>
+      <p>$35.00</p>
+      <img src="assets/product- (4).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="400" data-name="stylish chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Stylish Chair</h4>
+      <p>$45.00</p>
+      <img src="assets/product- (5).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="500" data-name="vintage chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Vintage Chair</h4>
+      <p>$65.00</p>
+      <img src="assets/product- (6).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+        <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="300" data-name="hand base lamp">
+                    <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Hand Base Lamp</h4>
+      <p>$35.00</p>
+      <img src="assets/product- (4).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="400" data-name="stylish chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Stylish Chair</h4>
+      <p>$45.00</p>
+      <img src="assets/product- (5).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="500" data-name="vintage chair">
+                <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Vintage Chair</h4>
+      <p>$65.00</p>
+      <img src="assets/product- (6).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+        <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="300" data-name="hand base lamp">
+        <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Hand Base Lamp</h4>
+      <p>$35.00</p>
+      <img src="assets/product- (4).png" alt="product" />
+        <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="400" data-name="stylish chair">
+        <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Stylish Chair</h4>
+      <p>$45.00</p>
+      <img src="assets/product- (5).png" alt="product" />
+              <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+
+    <div class="product__card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="500" data-name="vintage chair">
+          <!-- Top-right icon -->
+  <span class="product__icon">
+    <i class="ri-time-line"></i>
+  </span>
+      <h4>Vintage Chair</h4>
+      <p>$65.00</p>
+      <img src="assets/product- (6).png" alt="product" />
+        <!-- Buy Now Button -->
+  <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
+    </div>
+    
+  </div>
+</section>
+
+
+
+    <!--FOOTER SECTION-->
+       <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+  <h4>Contact</h4>
+
+  <p>3210 Street, Chennai,<br>Tamilnadu</p>
+
+  <ul class="footer__links">
+    <li><a href="tel:+919876543210">+91 9876543210</a></li>
+    <li><a href="tel:+919047366578">+91 9047366578</a></li>
+    <li><a href="mailto:info@thestackly.com">info@thestackly.com</a></li>
+  </ul>
+  <br>
+
+          <ul class="footer__socials">
+            <li>
+              <a href="404.html"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-linkedin-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-pinterest-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="404.html">Pricing</a></li>
+            <li><a href="404.html">FAQs</a></li>
+            <li><a href="404.html">Contact Support</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms</a></li>
+          </ul>
+        </div>
+<div class="footer__col">
+  <h4>Our Location</h4>
+
+  <div class="footer__map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31096.785919895504!2d80.220966!3d13.082680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265dfb4b3d8e1%3A0x2c6a5c8384d7a93b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000"
+      width="100%"
+      height="200"
+      style="border:0; border-radius: 10px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Interior Design Mastery. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+  </body>
+</html>
