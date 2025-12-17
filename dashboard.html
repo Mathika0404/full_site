@@ -298,7 +298,7 @@
         <img src="https://i.pravatar.cc/40?img=4">
       </div>
 
-      <button class="help-btn">Need Help?</button>
+    <button class="help-btn" id="helpBtn">Need Help?</button>
     </div>
 
   </div>
@@ -310,5 +310,15 @@
 </div>
 
 <script src="dashboard.js"></script>
+<script>
+  // Select the button
+const helpBtn = document.getElementById('helpBtn');
+
+// Add click event
+helpBtn.addEventListener('click', function() {
+    alert('This page is 404 error'); // Example action
+    // You can replace this with any function, e.g., open a chat window
+});
+</script>
 </body>
 </html>
