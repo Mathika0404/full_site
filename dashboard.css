@@ -380,6 +380,131 @@ th, td {
   cursor: pointer;
 }
 
+.analytics-section {
+  padding: 25px;
+  background: #f6f8fc;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, auto);  /* 2 rows */
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .analytics-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+.analytics-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+/* Shared UI */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-left: 6px;
+}
+
+.badge.up { background:#ecfeff; color:#0284c7; }
+.badge.down { background:#fff7ed; color:#ea580c; }
+
+/* Bars */
+.bar-chart {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.bar-chart span {
+  width: 6px;
+  height: 60px;
+  background: #e5edff;
+  border-radius: 4px;
+}
+
+.bar-chart span:nth-child(odd) {
+  height: 90px;
+  background: #3b6cff;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.dot.blue { background:#3b6cff; }
+.dot.gray { background:#e5edff; }
+.dot.light { background:#c7d2fe; }
+.dot.dark { background:#2563eb; }
+
+/* Donut */
+.donut-wrap {
+  position: relative;
+  width: 160px;
+  margin: 20px auto;
+}
+
+.center-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Canvas */
+.analytics-card canvas {
+  width: 100% !important;
+  height: 220px !important;
+}
+
+/* Mobile */
+@media(max-width:576px){
+  .analytics-section {
+    padding: 15px;
+  }
+}
+
 
 /* ===============================
    RESPONSIVE MEDIA QUERIES

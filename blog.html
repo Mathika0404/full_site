@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glowing - Reveal The Beauty of Skin</title>
+      <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./index2.css.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./images/banner-1.jpg">
+
+</head>
+<style>
+  nav {
+  position: relative;
+  z-index: 9999;
+  background: white;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 99999;
+  display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.hero,
+.hero-img,
+.hero-banner,
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  margin-top: 80px;
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__socials a {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.footer__socials a:hover {
+  opacity: 0.5;
+}
+
+.footer__bar {
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: var(--extra-light);
+  opacity: 0.8;
+  text-align: center;
+}
+
+/* BLOG GRID */
+
+.blog-item p{
+    text-align: center;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0;
+  margin-top: 30px;
+  list-style: none;
+}
+
+/* BLOG CARD */
+.blog-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+}
+
+/* IMAGE */
+.card-banner {
+  overflow: hidden;
+}
+
+.img-cover {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* TEXT */
+.blog-text {
+  padding: 15px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* NEWS LINK */
+.news-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px 15px;
+  color: #3998e6;
+  font-weight: bold;
+  text-decoration: none;
+  
+}
+
+.news-link:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+</style>
+
+<body id="top">
+<nav>
+  <div class="nav__header">
+<div class="nav__logo">
+  <a href="./index2.html">
+    <img src="../assets/stackly_logo.webp" alt="stackly_logo" class="logo-img" />
+  </a>
+</div>
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+
+    <!-- HOME DROPDOWN -->
+<li class="dropdown">
+  <a href="index2.html" class="home-link">Home</a>   <!-- Works normally -->
+
+  <i class="ri-arrow-down-s-line arrow"></i>   <!-- Opens dropdown -->
+
+  <ul class="dropdown-menu">
+    <li><a href="../index.html">Home Page 1</a></li>
+  </ul>
+</li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="offer.html">Offer</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="login.html">Login</a></li>
+
+  </ul>
+</nav>
+
+  <!-- 
+    - #MOBILE NAVBAR
+  -->
+
+  <div class="sidebar">
+    <div class="mobile-navbar" data-navbar>
+
+      <div class="wrapper">
+        <a href="#" class="logo">
+          <img src="./images/logo.png" width="179" height="26" alt="Glowing">
+        </a>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+
+      <ul class="navbar-list">
+
+        <li>
+          <a href="#home" class="navbar-link" data-nav-link>Home</a>
+        </li>
+
+        <li>
+          <a href="#collection" class="navbar-link" data-nav-link>Collection</a>
+        </li>
+
+        <li>
+          <a href="#shop" class="navbar-link" data-nav-link>Shop</a>
+        </li>
+
+        <li>
+          <a href="#offer" class="navbar-link" data-nav-link>Offer</a>
+        </li>
+
+        <li>
+          <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="overlay" data-nav-toggler data-overlay></div>
+  </div>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="hero" data-section>
+        <div class="container">
+
+          <ul class="has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="hero-card has-bg-image" style="background-image: url('./images/banner-1.jpg')">
+
+                <div class="card-content">
+
+                  <h1 class="h1 hero-title">
+                    Beauty begins <br>
+                    with confidence
+                  </h1>
+
+                  <p class="hero-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, totam?
+                  </p>
+
+                  <a href="./404.html" class="btn btn-primary">Shop Now</a>
+
+                </div>
+
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #BLOG
+      -->
+
+<section class="section blog" id="blog" aria-label="blog" data-section>
+  <div class="container">
+
+    <h2 class="h2-large section-title">More to Discover</h2>
+
+    <ul class="blog-grid">
+
+      <!-- COPY THIS CARD TO MAKE 12 TOTAL -->
+      <!-- Card 4 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-1.jpg" class="img-cover"></figure>
+        <p class="blog-text">Beauty Trends</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, suscipit exercitationem quaerat eveniet vero laboriosam.</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 5 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-2.jpg" class="img-cover"></figure>
+        <p class="blog-text">Skin Care Tips</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, eos molestias? Esse, vero? At, reprehenderit?</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 6 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-3.jpg" class="img-cover"></figure>
+        <p class="blog-text">New Arrivals</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ex excepturi voluptatum tenetur vitae fuga.</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 7 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-1.jpg" class="img-cover"></figure>
+        <p class="blog-text">Limited Offers</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quisquam? Expedita vero ab nesciunt commodi!</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 8 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-2.jpg" class="img-cover"></figure>
+        <p class="blog-text">Product Guides</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt modi facilis id. Saepe, qui eaque.</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 9 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-3.jpg" class="img-cover"></figure>
+        <p class="blog-text">Customer Stories</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maiores dicta veniam natus, deleniti enim.</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 10 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-1.jpg" class="img-cover"></figure>
+        <p class="blog-text">Wellness Tips</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptas similique eaque ex neque officiis.</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 11 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-2.jpg" class="img-cover"></figure>
+        <p class="blog-text">Daily Care</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga saepe nostrum dolore consequatur, error veniam.</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 12 -->
+      <li class="blog-item"><div class="blog-card">
+        <figure class="card-banner img-holder"><img src="./images/blog-3.jpg" class="img-cover"></figure>
+        <p class="blog-text">Healthy Glow</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur similique inventore placeat incidunt, dolores eos.</p>
+        <a href="404.html" class="news-link">News <ion-icon name="arrow-forward-outline"></ion-icon></a>
+      </div></li>
+
+      <!-- Card 13 -->
+<li class="blog-item">
+  <div class="blog-card">
+    <figure class="card-banner img-holder">
+      <img src="./images/blog-1.jpg" class="img-cover" alt="News">
+    </figure>
+    <p class="blog-text">Exclusive Offers</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa optio molestias officiis recusandae atque sapiente.</p>
+    <a href="404.html" class="news-link">
+      News <ion-icon name="arrow-forward-outline"></ion-icon>
+    </a>
+  </div>
+</li>
+
+<!-- Card 14 -->
+<li class="blog-item">
+  <div class="blog-card">
+    <figure class="card-banner img-holder">
+      <img src="./images/blog-2.jpg" class="img-cover" alt="News">
+    </figure>
+    <p class="blog-text">Beauty Secrets</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque totam ea magnam explicabo nostrum expedita.</p>
+    <a href="404.html" class="news-link">
+      News <ion-icon name="arrow-forward-outline"></ion-icon>
+    </a>
+  </div>
+</li>
+
+<!-- Card 15 -->
+<li class="blog-item">
+  <div class="blog-card">
+    <figure class="card-banner img-holder">
+      <img src="./images/blog-3.jpg" class="img-cover" alt="News">
+    </figure>
+    <p class="blog-text">Customer Favorites</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates aperiam minima, fugit aspernatur quam dignissimos.</p>
+    <a href="404.html" class="news-link">
+      News <ion-icon name="arrow-forward-outline"></ion-icon>
+    </a>
+  </div>
+</li>
+
+
+    </ul>
+
+  </div>
+</section>
+
+
+
+    </article>
+  </main>
+
+
+
+
+
+    <!--FOOTER SECTION-->
+       <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+  <h4>Contact</h4>
+  <p>3210 Street, Chennai,<br>Tamilnadu</p>
+
+  <ul class="footer__links">
+    <li><a href="tel:+919876543210">+91 9876543210</a></li>
+    <li><a href="tel:+919047366578">+91 9047366578</a></li>
+    <li><a href="mailto:info@thestackly.com">info@thestackly.com</a></li>
+  </ul>
+<br>
+          <ul class="footer__socials">
+            <li>
+              <a href="404.html"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-linkedin-fill"></i></a>
+            </li>
+            <li>
+              <a href="404.html"><i class="ri-pinterest-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="./index2.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="offer.html">Offer</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="404.html">Pricing</a></li>
+            <li><a href="404.html">FAQs</a></li>
+            <li><a href="404.html">Contact Support</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Terms</a></li>
+          </ul>
+        </div>
+<div class="footer__col">
+  <h4>Our Location</h4>
+
+  <div class="footer__map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31096.785919895504!2d80.220966!3d13.082680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265dfb4b3d8e1%3A0x2c6a5c8384d7a93b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000"
+      width="100%"
+      height="200"
+      style="border:0; border-radius: 10px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Interior Design Mastery. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./main.js" defer></script>
+<script src="./index2.js.js" defer></script>
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

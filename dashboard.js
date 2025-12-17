@@ -64,3 +64,45 @@ new Chart(salesCtx, {
   }
 });
 
+new Chart(document.getElementById('analyticsLineChart'), {
+  type: 'line',
+  data: {
+    labels: ['01 May','02','03','04','05','06','07 May'],
+    datasets: [{
+      data: [120,100,140,90,180,150,210],
+      borderColor:'#3b6cff',
+      tension:0.4
+    }]
+  },
+  options:{ plugins:{legend:{display:false}} }
+});
+
+new Chart(document.getElementById('analyticsDonutChart'), {
+  type:'doughnut',
+  data:{
+    datasets:[{
+      data:[72,18,10],
+      backgroundColor:['#3b6cff','#c7d2fe','#2563eb'],
+      borderWidth:0
+    }]
+  },
+  options:{ cutout:'75%', plugins:{legend:{display:false}} }
+});
+
+new Chart(document.getElementById('analyticsGaugeChart'), {
+  type:'doughnut',
+  data:{
+    datasets:[{
+      data:[65,35],
+      backgroundColor:['#3b6cff','#e5edff'],
+      borderWidth:0
+    }]
+  },
+  options:{
+    rotation:-90,
+    circumference:180,
+    cutout:'80%',
+    plugins:{legend:{display:false}}
+  }
+});
+

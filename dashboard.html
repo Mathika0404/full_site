@@ -305,6 +305,79 @@
 </section>
 
 
+<section class="analytics-section">
+
+  <div class="analytics-grid">
+
+    <!-- Total Orders -->
+    <div class="analytics-card">
+      <div class="card-header">
+        <div>
+          <h4>Total orders <span class="badge down">-6.8%</span></h4>
+          <p>Last 7 days</p>
+        </div>
+        <h2>16,247</h2>
+      </div>
+
+      <div class="bar-chart">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="legend">
+        <div><i class="dot blue"></i> Completed <b>52%</b></div>
+        <div><i class="dot gray"></i> Pending payment <b>48%</b></div>
+      </div>
+    </div>
+
+    <!-- New Customers -->
+    <div class="analytics-card">
+      <div class="card-header">
+        <div>
+          <h4>New customers <span class="badge up">+26.5%</span></h4>
+          <p>Last 7 days</p>
+        </div>
+        <h2>356</h2>
+      </div>
+
+      <canvas id="analyticsLineChart"></canvas>
+    </div>
+
+    <!-- Top Coupons -->
+    <div class="analytics-card">
+      <h4>Top coupons</h4>
+      <p>Last 7 days</p>
+
+      <div class="donut-wrap">
+        <canvas id="analyticsDonutChart"></canvas>
+        <span class="center-text">72%</span>
+      </div>
+
+      <div class="legend">
+        <div><i class="dot blue"></i> Percentage discount <b>72%</b></div>
+        <div><i class="dot light"></i> Fixed card discount <b>18%</b></div>
+        <div><i class="dot dark"></i> Fixed product discount <b>10%</b></div>
+      </div>
+    </div>
+
+    <!-- Paying vs Non Paying -->
+    <div class="analytics-card">
+      <h4>Paying vs non paying</h4>
+      <p>Last 7 days</p>
+
+      <canvas id="analyticsGaugeChart"></canvas>
+
+      <div class="legend">
+        <div><i class="dot blue"></i> Paying customer</div>
+        <div><i class="dot light"></i> Non-paying customer</div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
     </main>
   </div>
 </div>
