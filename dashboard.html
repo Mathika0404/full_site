@@ -1,331 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+    <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Icons -->
-<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<title>AdminHub Dashboard</title>
-
-<style>
-/* ===== RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background: #f4f6f9;
-}
-
-/* ===== CONTENT CENTER ===== */
-#content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* ===== HEADER ===== */
-.head-title h1 {
-    font-size: 26px;
-    margin-bottom: 8px;
-}
-
-.breadcrumb {
-    display: flex;
-    gap: 8px;
-    list-style: none;
-}
-
-.breadcrumb li a {
-    text-decoration: none;
-    color: #555;
-}
-
-.breadcrumb li a.active {
-    color: blue;
-}
-
-/* ===== CARDS ===== */
-.box-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.box-info li {
-    background: #fff;
-    padding: 18px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.box-info i {
-    font-size: 30px;
-    color: blue;
-}
-
-.text {
-    text-align: center;
-}
-
-.text h3 {
-    font-size: 22px;
-}
-
-.text p {
-    font-size: 14px;
-    color: gray;
-}
-
-/* ===== TABLE + TODO ===== */
-.table-data {
-    margin-top: 25px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-}
-
-/* ===== ORDERS ===== */
-.order {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.order .head h3 {
-    margin-bottom: 10px;
-}
-
-.order table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.order th, .order td {
-    padding: 10px;
-    text-align: left;
-}
-
-.order th {
-    background: #eee;
-}
-
-.order td img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-/* ===== STATUS ===== */
-.status {
-    padding: 5px 10px;
-    border-radius: 20px;
-    color: white;
-    font-size: 12px;
-}
-
-.completed { background: green; }
-.pending { background: orange; }
-.process { background: blue; }
-
-/* ===== TODOS ===== */
-.todo {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.todo .head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.todo ul {
-    list-style: none;
-}
-
-.todo li {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    margin-bottom: 8px;
-}
-
-.todo li.completed p {
-    text-decoration: line-through;
-    color: gray;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px) {
-    .box-info {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .table-data {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media(max-width:500px) {
-    .box-info {
-        grid-template-columns: 1fr;
-    }
-
-    .breadcrumb {
-        display: none;
-    }
-}
-</style>
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-<section id="content">
-<main>
+<div class="page">
+  <div class="dashboard">
 
-<div class="head-title">
-    <h1>Dashboard</h1>
-    <ul class="breadcrumb">
-        <li><a href="#">Dashboard</a></li>
-        <li>></li>
-        <li><a class="active" href="#">Home</a></li>
-    </ul>
-</div>
-
-<ul class="box-info">
-    <li>
-        <i class='bx bxs-calendar-check'></i>
-        <span class="text">
-            <h3>1020</h3>
-            <p>New Orders</p>
-        </span>
-    </li>
-    <li>
-        <i class='bx bxs-group'></i>
-        <span class="text">
-            <h3>2834</h3>
-            <p>Visitors</p>
-        </span>
-    </li>
-    <li>
-        <i class='bx bxs-dollar-circle'></i>
-        <span class="text">
-            <h3>$2543</h3>
-            <p>Total Sales</p>
-        </span>
-    </li>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <img src="./assets/stackly_logo.webp" alt="Stackly Logo" class="logo-img">
+<ul>
+  <li>
+    <a href="index.html" class="back-btn">
+      <span class="arrow">&larr;</span> Back to Home
+    </a>
+  </li>
 </ul>
+    </aside>
 
-<div class="table-data">
+    <!-- Main -->
+    <main>
 
-<div class="order">
-<div class="head"><h3>Recent Orders</h3></div>
-<table>
-<thead>
-<tr><th>User</th><th>Date</th><th>Status</th></tr>
-</thead>
-<tbody>
-<tr><td><img src="assets/order1.webp"> John</td><td>01-10-21</td><td><span class="status completed">Completed</span></td></tr>
-<tr><td><img src="assets/order2.webp"> Smith</td><td>01-10-21</td><td><span class="status pending">Pending</span></td></tr>
-<tr><td><img src="assets/order3.webp"> Hari</td><td>01-10-21</td><td><span class="status process">Process</span></td></tr>
-<tr><td><img src="assets/order4.webp"> Smith</td><td>01-10-21</td><td><span class="status pending">Pending</span></td></tr>
-<tr><td><img src="assets/order5.webp"> Hari</td><td>01-10-21</td><td><span class="status process">Process</span></td></tr>
-<tr><td><img src="assets/order6.webp"> John</td><td>01-10-21</td><td><span class="status completed">Completed</span></td></tr>
-<tr><td><img src="assets/order7.webp"> Smith</td><td>01-10-21</td><td><span class="status pending">Pending</span></td></tr>
-<tr><td><img src="assets/order8.webp"> Hari</td><td>01-10-21</td><td><span class="status process">Process</span></td></tr>
-<tr><td><img src="assets/order9.jpeg"> John</td><td>01-10-21</td><td><span class="status completed">Completed</span></td></tr>
-<tr><td><img src="assets/order10.jpeg"> Smith</td><td>01-10-21</td><td><span class="status pending">Pending</span></td></tr>
-<tr><td><img src="assets/order1.webp"> Hari</td><td>01-10-21</td><td><span class="status process">Process</span></td></tr>
-</tbody>
-</table>
-</div>
+      <header>
+        <h1>Dashboard</h1>
+      </header>
+      <br>
+      <br>
 
-<div class="todo">
-<div class="head">
-<h3>Todos</h3>
-<i class='bx bx-plus' id="addTodo"></i>
-</div>
+      <!-- Stats -->
+<section class="stats">
 
-<canvas id="todoChart"></canvas>
+  <div class="stat-card">
+    <p class="stat-title">Total Page Views</p>
+    <div class="stat-main">
+      <h2>4,42,236</h2>
+      <span class="badge up">↗ 59.3%</span>
+    </div>
+    <p class="stat-desc">You made an extra <b class="blue">35,000</b> this year</p>
+  </div>
 
-<ul class="todo-list">
-<li class="completed"><p>Task One</p><i class='bx bx-trash'></i></li>
-<li class="not-completed"><p>Task Two</p><i class='bx bx-trash'></i></li>
-<li class="completed"><p>Task Three</p><i class='bx bx-trash'></i></li>
-<li class="completed"><p>Task Four</p><i class='bx bx-trash'></i></li>
-<li class="completed"><p>Task Five</p><i class='bx bx-trash'></i></li>
-<li class="not-completed"><p>Task Six</p><i class='bx bx-trash'></i></li>
-<li class="not-completed"><p>Task Seven</p><i class='bx bx-trash'></i></li>
-<li class="not-completed"><p>Task Eight</p><i class='bx bx-trash'></i></li>
-<li class="completed"><p>Task Nine</p><i class='bx bx-trash'></i></li>
-<li class="not-completed"><p>Task Ten</p><i class='bx bx-trash'></i></li>
-</ul>
-</div>
+  <div class="stat-card">
+    <p class="stat-title">Total Users</p>
+    <div class="stat-main">
+      <h2>78,250</h2>
+      <span class="badge up">↗ 70.5%</span>
+    </div>
+    <p class="stat-desc">You made an extra <b class="blue">8,900</b> this year</p>
+  </div>
 
-</div>
+  <div class="stat-card">
+    <p class="stat-title">Total Order</p>
+    <div class="stat-main">
+      <h2>18,800</h2>
+      <span class="badge down">↘ 27.4%</span>
+    </div>
+    <p class="stat-desc">You made an extra <b class="orange">1,943</b> this year</p>
+  </div>
 
-</main>
+  <div class="stat-card">
+    <p class="stat-title">Total Sales</p>
+    <div class="stat-main">
+      <h2>35,078</h2>
+      <span class="badge down">↘ 27.4%</span>
+    </div>
+    <p class="stat-desc">You made an extra <b class="orange">20,395</b> this year</p>
+  </div>
+
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
-const ctx = document.getElementById("todoChart");
+      <!-- Charts -->
+      <section class="charts">
+        <div class="chart-card">
+          <h2>Sales Trend</h2>
+          <canvas id="lineChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Product Views</h2>
+          <canvas id="barChart"></canvas>
+        </div>
+      </section>
 
-let chart = new Chart(ctx, {
-    type: "doughnut",
-    data: {
-        labels: ["Completed", "Pending"],
-        datasets: [{
-            data: [1, 1],
-            backgroundColor: ["#4CAF50", "#FFC107"]
-        }]
-    }
-});
+      <!-- Bottom -->
+      <section class="bottom">
+        <div class="table-card">
+          <h2>All Orders</h2>
+          <table>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Price</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>#202394</td>
+              <td>Ripon Ahmed</td>
+              <td>01 Jan</td>
+              <td>₹1200</td>
+              <td class="done">Completed</td>
+            </tr>
+            <tr>
+              <td>#202395</td>
+              <td>Leslie</td>
+              <td>03 Jan</td>
+              <td>₹1600</td>
+              <td class="pending">Pending</td>
+            </tr>
+            <tr>
+  <td>#202396</td>
+  <td>Darlene Robertson</td>
+  <td>05 Jan</td>
+  <td>₹980</td>
+  <td class="done">Completed</td>
+</tr>
 
-function updateChart() {
-    let completed = document.querySelectorAll(".todo li.completed").length;
-    let pending = document.querySelectorAll(".todo li.not-completed").length;
-    chart.data.datasets[0].data = [completed, pending];
-    chart.update();
-}
+<tr>
+  <td>#202397</td>
+  <td>Brooklyn Simmons</td>
+  <td>06 Jan</td>
+  <td>₹2,350</td>
+  <td class="pending">Pending</td>
+</tr>
 
-document.querySelector("#addTodo").onclick = () => {
-    let text = prompt("Enter Todo:");
-    if (!text) return;
-    let li = document.createElement("li");
-    li.className = "not-completed";
-    li.innerHTML = `<p>${text}</p><i class='bx bx-trash'></i>`;
-    document.querySelector(".todo-list").appendChild(li);
-    updateChart();
-};
+<tr>
+  <td>#202398</td>
+  <td>Ronald Richards</td>
+  <td>08 Jan</td>
+  <td>₹1,450</td>
+  <td class="done">Completed</td>
+</tr>
 
-document.querySelector(".todo-list").onclick = e => {
-    if (e.target.tagName === "P") {
-        let li = e.target.parentElement;
-        li.classList.toggle("completed");
-        li.classList.toggle("not-completed");
-        updateChart();
-    }
-    if (e.target.classList.contains("bx-trash")) {
-        e.target.parentElement.remove();
-        updateChart();
-    }
-};
+<tr>
+  <td>#202399</td>
+  <td>Devon Lane</td>
+  <td>09 Jan</td>
+  <td>₹3,200</td>
+  <td class="pending">Pending</td>
+</tr>
 
-updateChart();
-</script>
+<tr>
+  <td>#202400</td>
+  <td>Kristin Watson</td>
+  <td>10 Jan</td>
+  <td>₹750</td>
+  <td class="done">Completed</td>
+</tr>
 
+<tr>
+  <td>#202401</td>
+  <td>Courtney Henry</td>
+  <td>12 Jan</td>
+  <td>₹1,890</td>
+  <td class="done">Completed</td>
+</tr>
+
+<tr>
+  <td>#202402</td>
+  <td>Esther Howard</td>
+  <td>14 Jan</td>
+  <td>₹2,100</td>
+  <td class="pending">Pending</td>
+</tr>
+
+          </table>
+        </div>
+
+        <div class="progress-card">
+          <h4>Top Sold Items</h4>
+          <div class="progress">
+            <span>Stackable Chair</span>
+            <div><b style="width:75%"></b></div>
+          </div>
+          <div class="progress">
+            <span>Dining Chair</span>
+            <div><b style="width:90%"></b></div>
+          </div>
+          <div class="progress">
+  <span>Stylish Chair</span>
+  <div><b style="width:85%"></b></div>
+</div>
+
+<div class="progress">
+  <span>Hand Base Lamp</span>
+  <div><b style="width:70%"></b></div>
+</div>
+
+<div class="progress">
+  <span>Vintage Chair</span>
+  <div><b style="width:95%"></b></div>
+</div>
+
+<div class="progress">
+  <span>Facial Cleanser</span>
+  <div><b style="width:65%"></b></div>
+</div>
+
+<div class="progress">
+  <span>Eye Cream</span>
+  <div><b style="width:78%"></b></div>
+</div>
+
+<div class="progress">
+  <span>Lip Cream</span>
+  <div><b style="width:55%"></b></div>
+</div>
+
+          <div class="progress">
+            <span>Hair Oil</span>
+            <div><b style="width:80%"></b></div>
+          </div>
+        </div>
+      </section>
+
+<section class="report-section">
+
+  <!-- LEFT : Sales Report -->
+  <div class="report-card">
+    <div class="report-header">
+      <h2>Sales Report</h2>
+    </div>
+
+    <p class="net-profit">Net Profit</p>
+    <h2 class="profit-amount">$1560</h2>
+
+    <div class="legend">
+      <span class="income">Income</span>
+      <span class="cost">Cost of Sales</span>
+    </div>
+
+    <canvas id="salesChart"></canvas>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right-panels">
+
+    <!-- Transaction History -->
+    <div class="panel-card">
+      <h3>Transaction History</h3>
+
+      <div class="transaction">
+        <div class="icon green">🎁</div>
+        <div class="info">
+          <strong>Order #002434</strong>
+          <span>Today, 2:00 AM</span>
+        </div>
+        <div class="amount">
+          <strong>+ $1,430</strong>
+          <span>78%</span>
+        </div>
+      </div>
+
+      <div class="transaction">
+        <div class="icon blue">💬</div>
+        <div class="info">
+          <strong>Order #984947</strong>
+          <span>5 August, 1:45 PM</span>
+        </div>
+        <div class="amount">
+          <strong>+ $302</strong>
+          <span>8%</span>
+        </div>
+      </div>
+
+      <div class="transaction">
+        <div class="icon red">⚙️</div>
+        <div class="info">
+          <strong>Order #988784</strong>
+          <span>7 hours ago</span>
+        </div>
+        <div class="amount">
+          <strong>+ $682</strong>
+          <span>16%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Help & Support -->
+    <div class="panel-card">
+      <h3>Help & Support Chat</h3>
+      <p class="sub">Typical reply within 5 min</p>
+
+      <div class="avatars">
+        <img src="https://i.pravatar.cc/40?img=1">
+        <img src="https://i.pravatar.cc/40?img=2">
+        <img src="https://i.pravatar.cc/40?img=3">
+        <img src="https://i.pravatar.cc/40?img=4">
+      </div>
+
+      <button class="help-btn">Need Help?</button>
+    </div>
+
+  </div>
+</section>
+
+
+    </main>
+  </div>
+</div>
+
+<script src="dashboard.js"></script>
 </body>
 </html>

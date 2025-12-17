@@ -1,76 +1,66 @@
-const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
-
-allSideMenu.forEach(item=> {
-	const li = item.parentElement;
-
-	item.addEventListener('click', function () {
-		allSideMenu.forEach(i=> {
-			i.parentElement.classList.remove('active');
-		})
-		li.classList.add('active');
-	})
+const lineCtx = document.getElementById('lineChart');
+new Chart(lineCtx, {
+  type: 'line',
+  data: {
+    labels: ['Jan','Mar','May','Jul','Sep','Dec'],
+    datasets: [
+      {
+        label: 'Current Year',
+        data: [20,35,30,45,40,50],
+        borderColor: '#6d28d9',
+        tension: 0.4
+      },
+      {
+        label: 'Last Year',
+        data: [15,25,28,40,30,35],
+        borderColor: '#ef4444',
+        tension: 0.4
+      }
+    ]
+  }
 });
 
+const barCtx = document.getElementById('barChart');
+new Chart(barCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Mon','Tue','Wed','Thu','Fri','Sat'],
+    datasets: [
+      {
+        data: [10,14,12,16,18,20],
+        backgroundColor: '#6d28d9'
+      }
+    ]
+  }
+});
 
+const salesCtx = document.getElementById('salesChart');
 
+new Chart(salesCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    datasets: [
+      {
+        label: 'Income',
+        data: [180, 90, 135, 115, 120, 145, 170, 200, 170, 230, 210, 180],
+        backgroundColor: '#6d28d9',
+        borderRadius: 6
+      },
+      {
+        label: 'Cost of Sales',
+        data: [120, 45, 80, 150, 170, 100, 180, 220, 180, 210, 220, 200],
+        backgroundColor: '#ef4444',
+        borderRadius: 6
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false }
+    }
+  }
+});
 
-// TOGGLE SIDEBAR
-const menuBar = document.querySelector('#content nav .bx.bx-menu');
-const sidebar = document.getElementById('sidebar');
-
-menuBar.addEventListener('click', function () {
-	sidebar.classList.toggle('hide');
-})
-
-
-
-
-
-
-
-const searchButton = document.querySelector('#content nav form .form-input button');
-const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
-const searchForm = document.querySelector('#content nav form');
-
-searchButton.addEventListener('click', function (e) {
-	if(window.innerWidth < 576) {
-		e.preventDefault();
-		searchForm.classList.toggle('show');
-		if(searchForm.classList.contains('show')) {
-			searchButtonIcon.classList.replace('bx-search', 'bx-x');
-		} else {
-			searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		}
-	}
-})
-
-
-
-
-
-if(window.innerWidth < 768) {
-	sidebar.classList.add('hide');
-} else if(window.innerWidth > 576) {
-	searchButtonIcon.classList.replace('bx-x', 'bx-search');
-	searchForm.classList.remove('show');
-}
-
-
-window.addEventListener('resize', function () {
-	if(this.innerWidth > 576) {
-		searchButtonIcon.classList.replace('bx-x', 'bx-search');
-		searchForm.classList.remove('show');
-	}
-})
-
-
-
-const switchMode = document.getElementById('switch-mode');
-
-switchMode.addEventListener('change', function () {
-	if(this.checked) {
-		document.body.classList.add('dark');
-	} else {
-		document.body.classList.remove('dark');
-	}
-})
