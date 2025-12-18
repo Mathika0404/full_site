@@ -173,7 +173,7 @@
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
         </div>
         <div class="product__card">
-          <h4>Upholstered Accent Chair</h4>
+          <h4> Accent Chair</h4>
           <p>$35.00</p>
           <img src="assets/product- (2).png" alt="product" />
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
@@ -185,7 +185,7 @@
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
         </div>
         <div class="product__card">
-          <h4>Wood & Leather Accent Chair</h4>
+          <h4>Leather Accent Chair</h4>
           <p>$35.00</p>
           <img src="assets/product- (4).png" alt="product" />
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
@@ -332,27 +332,21 @@
     <script src="main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-function redirect404(event) {
-  event.preventDefault(); // stop form default submit
+  AOS.init();
 
-  const emailInput = document.getElementById("email");
-  const emailValue = emailInput.value.trim();
 
-  // Strict email pattern (requires .com / .in / etc.)
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-  if (!emailPattern.test(emailValue)) {
-    emailInput.setCustomValidity("Please enter a valid email address (example@gmail.com)");
-    emailInput.reportValidity(); // show browser error
-    return; // stop redirect
-  } else {
-    emailInput.setCustomValidity(""); // clear error
-  }
-
-  // ✅ Only redirect if everything is valid
-  window.location.href = "404.html";
-}
+function redirect404(event) { 
+  event.preventDefault(); // stop form default submit 
+  const emailInput = document.getElementById("email"); 
+  const emailValue = emailInput.value.trim(); // Strict email pattern (requires .com / .in / etc.) 
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; 
+  if (!emailPattern.test(emailValue)) { 
+    emailInput.setCustomValidity("Please enter a valid email address (example@gmail.com)"); 
+    emailInput.reportValidity(); // show browser error 
+    return; // stop redirect 
+    } else { emailInput.setCustomValidity(""); // clear error 
+    } // ✅ Only redirect if everything is valid 
+    window.location.href = "404.html"; }
 </script>
-
   </body>
 </html>
