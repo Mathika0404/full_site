@@ -167,37 +167,37 @@
       <h2 class="section__header">Our Products</h2>
       <div class="product__grid">
         <div class="product__card">
-          <h4>Stackable Chair</h4>
+          <h4>Floral Table Lamp</h4>
           <p>$87.00</p>
           <img src="assets/product- (1).png" alt="product" />
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
         </div>
         <div class="product__card">
-          <h4>Lamp Tool</h4>
+          <h4>Upholstered Accent Chair</h4>
           <p>$35.00</p>
           <img src="assets/product- (2).png" alt="product" />
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
         </div>
         <div class="product__card">
-          <h4>Dining Chair</h4>
+          <h4>Decorative Table Lamp</h4>
           <p>$55.00</p>
           <img src="assets/product- (3).png" alt="product" />
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
         </div>
         <div class="product__card">
-          <h4>Hand Base Lamp</h4>
+          <h4>Wood & Leather Accent Chair</h4>
           <p>$35.00</p>
           <img src="assets/product- (4).png" alt="product" />
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
         </div>
         <div class="product__card">
-          <h4>Stylish Chair</h4>
+          <h4>Wooden Rocking Chair</h4>
           <p>$45.00</p>
           <img src="assets/product- (5).png" alt="product" />
             <button class="buy-btn" onclick="window.location.href='404.html'">Buy Now</button>
         </div>
         <div class="product__card">
-          <h4>Vintage Chair</h4>
+          <h4>Swivel Accent Chair</h4>
           <p>$65.00</p>
           <img src="assets/product- (6).png" alt="product" />
                        <!-- Buy Now Button -->
@@ -233,13 +233,22 @@
     </div>
 
     <!-- RIGHT SIDE FORM -->
-    <form class="contact__form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <input type="text" placeholder="Subject" required />
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
+<form class="contact__form" onsubmit="redirect404(event)">
+  <input type="text" placeholder="Your Name" required />
+  
+  <input 
+    type="email" 
+    id="email"
+    placeholder="Your Email" 
+    required 
+  />
+
+  <input type="text" placeholder="Subject" required />
+  <textarea placeholder="Message" required></textarea>
+
+  <button type="submit" class="btn">Send Message</button>
+</form>
+
 
   </div>
 </section>
@@ -323,7 +332,27 @@
     <script src="main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
+function redirect404(event) {
+  event.preventDefault(); // stop form default submit
+
+  const emailInput = document.getElementById("email");
+  const emailValue = emailInput.value.trim();
+
+  // Strict email pattern (requires .com / .in / etc.)
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  if (!emailPattern.test(emailValue)) {
+    emailInput.setCustomValidity("Please enter a valid email address (example@gmail.com)");
+    emailInput.reportValidity(); // show browser error
+    return; // stop redirect
+  } else {
+    emailInput.setCustomValidity(""); // clear error
+  }
+
+  // ✅ Only redirect if everything is valid
+  window.location.href = "404.html";
+}
 </script>
+
   </body>
 </html>
